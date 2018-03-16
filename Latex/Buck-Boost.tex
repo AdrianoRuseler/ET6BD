@@ -1,0 +1,213 @@
+\titulo{MODELAGEM E CONTROLE DE UM CONVERSOR BUCK--BOOST CC--CC EM MODO DE CONDUÇÃO CONTÍNUA} % Titulo em português
+\title{MODELLING AND CONTROL OF A DC--DC BUCK--BOOST CONVERTER IN CONTINUOUS CONDUCTION MODE} % Título em inglês
+
+\maketitle
+
+\editorfootnote{Artigo compilado em {\today} às {\currenttime}h, referente a disciplina optativa de Modelagem e Regulação Digital de Conversores Estáticos -- ET6BD, ministrada pelo Prof. Adriano Ruseler, Dr. Eng.\\
+	Repositório: \url{https://github.com/AdrianoRuseler/ET6BD} }
+
+
+
+\begin{resumo}  O resumo deve ser conciso e ao mesmo tempo refletir o que é apresentado no artigo, cujo entendimento deve independer da leitura do trabalho, sem notas de rodapé, abreviações e referências. Deve ser escrito em apenas um parágrafo, de forma impessoal, sem equações ou tabelas. Evite repetir expressões ou utilizar varias vezes a mesma palavra. Busque encadear as frases em um início, meio e fim.
+\end{resumo}
+
+\begin{palavraschave }
+		Os autores devem apresentar um conjunto de até seis palavras-chave (em ordem alfabética, todas iniciais maiúsculas e separadas por vírgula) que possam identificar os principais tópicos abordados.	
+%Use a lista de palavras--chave:\\ \url{http://www.ieee.org/organizations/pubs/ani_prod/keywrd98.txt}	
+\end{palavraschave }
+
+\englishtitle
+
+\begin{abstract}
+	The abstract must be a concise yet comprehensive reflection of what is in your article, a microcosm of the full article. The abstract must be written as one paragraph, and should not contain displayed mathematical equations or tabular material.  Ensure that your abstract reads well and is grammatically correct.
+\end{abstract}
+
+\begin{keywords}
+	The abstract should include three or four different keywords or phrases, as this will help readers to find it. It is important to avoid over-repetition of such phrases as this can result in a page being rejected by search engines. For a list of suggested keywords, \url{http://www.ieee.org/organizations/pubs/ani_prod/keywrd98.txt}
+\end{keywords}
+
+%\section*{NOMENCLATURA}
+%
+%\symbolnomenclature{$P$}{Número de polos.}
+%\symbolnomenclature{$V_{qd}$}{Componentes $dq$ da tensão de estator.}
+
+
+% Introdução
+\section{INTRODUÇÃO}
+
+
+A seção de Introdução tem o objetivo geral de apresentar a natureza do problema abordado no trabalho, através de adequada revisão bibliográfica, o propósito e a contribuição do artigo submetido.
+
+A introdução requer uma breve revisão da literatura referente ao tópico de pesquisa. A introdução é então melhor construída como um funil descritivo, começando com temas gerais e focando lentamente no trabalho em questão. Talvez de três a quatro parágrafos sejam necessários. Uma abordagem pode ser começar com um ou dois parágrafos que introduzam o leitor para o estudo de campo geral. Os parágrafos subsequentes então descrevem como um aspecto deste campo poderia ser melhorado. O parágrafo final é essencial. Ele afirma claramente, provavelmente na primeira frase do parágrafo, qual questão experimental será respondida pelo estudo. A hipótese é então indicada. Em seguida, descreve brevemente a abordagem que foi feita para testar a hipótese. Finalmente, uma frase de resumo pode ser adicionada informando como a resposta da sua pergunta vai contribuir para o campo geral de estudo \figref{fig:buckboost}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/BuckBoostConv}
+	\caption{Conversor Buck--Boost.}
+	\label{fig:buckboost}
+\end{figure}
+
+\subsection{Parâmetros de projeto do conversor Buck--Boost}
+
+
+A \tabref{tab:parametros} apresenta os parâmetros de projeto do conversor Buck--Boost.
+\textcolor{red}{atualize os valores da tabela, arquivo \emph{Buck-Boost\_parametros.tex} }
+% Tabela com parâmetros do conversor
+\input{Tables/Buck-Boost_parametros.tex}
+
+
+\section{Verificação do ponto de operação via simulação}
+
+A análise teórica apresentada anteriormente deve ser verificada por simulação \cite{noauthor_psim_nodate}.
+
+A \tabref{tab:steadystate} apresenta o ponto de operação do conversor Buck--Boost.
+\textcolor{red}{atualize os valores da tabela, arquivo \emph{Buck-Boost\_steadystate.tex} }
+
+% Tabela com o ponto de operação do conversor
+\input{Tables/Buck-Boost_steadystate.tex}
+
+
+A \tabref{tab:steadystatesim} apresenta uma comparação dos valores teóricos com os obtidos por simulação para o ponto de operação do conversor Buck--Boost.
+\textcolor{red}{atualize os valores da tabela, arquivo \emph{Buck-Boost\_steadystatesim.tex} }
+
+% Tabela com o ponto de operação do conversor
+\input{Tables/Buck-Boost_steadystatesim.tex}
+
+A \figref{fig:buck-boost-steadystate} apresenta a resposta da simulação do ponto de operação do conversor..  \textcolor{red}{compare se os valores simulados com os parâmetros de projeto...}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Buck-Boost}
+	\caption{Verificação do ponto de operação do conversor Buck-Boost.}
+	\label{fig:buck-boost-steadystate}
+\end{figure}
+
+
+
+									
+\section{Verificação do modelo dinâmico via simulação}
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1\linewidth]{Figs/Buck-BoostACSweep}
+		\caption{Comparação do diagrama de Bode das funções de transferência em função da razão cíclica obtida via simulação no PSIM.}
+	\label{fig:Buck-BoostACSweep}
+\end{figure}
+
+
+
+
+
+
+\section{Projeto do controlador de tensão}
+Detalhes do projeto do controlador de tensão
+
+
+
+
+% Tabela com a resposta ao degrau de referência
+\input{Tables/Buck-Boost_step1malha.tex}
+
+
+A \figref{fig:Buck-Boost1malha} apresenta o resultado da simulação da resposta ao degrau de referência de tensão....
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Buck-Boost1malha}
+	\caption{Resposta ao degrau de referência de tensão para o controlador implementado com blocos funcionais.}
+	\label{fig:Buck-Boost1malha}
+\end{figure}
+
+
+
+\subsection{Implementação analógica do controlador PI}
+
+% Tabela com a resposta ao degrau de referência
+\input{Tables/Buck-Boost_step1malhaAmpOp.tex}
+
+
+
+A \figref{fig:Buck-Boost1malhaAmpOp} apresenta o resultado da simulação da resposta ao degrau de referência de tensão....
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Buck-Boost1malhaAmpOp}
+	\caption{Resposta ao degrau de referência de tensão com controlador implementado com amplificadores operacionais.}
+	\label{fig:Buck-Boost1malhaAmpOp}
+\end{figure}
+
+
+
+
+\subsection{Implementação digital do controlador PI}
+
+
+\begin{lstlisting}[caption={Parâmetros do controlador PI digital de tensão.},label={lst:valoresPI}]
+// Constantes do controlador
+double  a0z = 1.00000000e+00;
+double  a1z = -1.00000000e+00;
+double  b0z = 5.30305662e-05;
+double  b1z = -4.65043351e-05;
+\end{lstlisting}
+
+\begin{lstlisting}[caption={Implementação do controlador PI digital de tensão.},label={lst:implementacaoPI}]
+e0=in[0]; // Erro atual
+// Calcula saída atual 
+u0= (e0*b0z+e1*b1z-u1*a1z)/a0z; 
+u1=u0; // Atualiza saída anterior
+e1=e0; // Atualiza erro anterior    
+out[0] = u0; // Saída do controlador
+\end{lstlisting}
+
+
+\subsection{Comparação entre as respostas ao degrau de referência}
+
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Buck-BoostStepResponse1malhaTodos}
+	\caption{Resposta ao degrau de referência de tensão.}
+	\label{fig:Buck-BoostStepResponse1malhaTodos}
+\end{figure}
+
+\section{Implementação com duas malhas}
+
+
+% Tabela com a resposta ao degrau de referência
+\input{Tables/Buck-Boost_step2malhas.tex}
+
+
+
+A \figref{fig:Buck-BoostStepResponse2malhas} apresenta o resultado da simulação da resposta ao degrau de referência de tensão....
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Buck-BoostStepResponse2malhas}
+	\caption{Comparação da resposta ao degrau de referência de tensão para a implementação com uma malha e com duas malhas.}
+	\label{fig:Buck-BoostStepResponse2malhas}
+\end{figure}
+
+
+A \figref{fig:Buck-Boost2malhas} apresenta o resultado da simulação da resposta ao degrau de referência de tensão....
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{Figs/Buck-Boost2malhas}
+	\caption{Resposta ao degrau de referência de tensão com duas malhas de controle.}
+	\label{fig:Buck-Boost2malhas}
+\end{figure}
+
+
+\section{Conclusões} 
+
+As conclusões devem ser as mais claras possíveis, informando aos leitores sobre a importância do trabalho dentro do contexto em que se situa. As vantagens e desvantagens em relação aos já existentes na literatura devem ser comentadas, assim como os resultados obtidos e as possíveis aplicações práticas do trabalho.
+
+
+\bibliographystyle{IEEEtran}
+
+\bibliography{Refs/APS} % Inclui arquivos de referência
+
+\balance
+
+

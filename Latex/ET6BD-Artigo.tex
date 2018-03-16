@@ -1,0 +1,50 @@
+
+\documentclass[portugues]{DAELT} % Chama a classe DAELT com a opção de idioma em português.
+
+% informações do PDF
+\makeatletter
+\hypersetup{
+	%pagebackref=true,
+	pdftitle={\@title}, 
+	pdfauthor={Autores},
+	pdfsubject={ET6BD},
+	pdfcreator={LaTeX with abnTeX2},
+	pdfkeywords={APS}{Overleaf}{ET6BD}{UTFPR}, 
+	colorlinks=true,       		% false: boxed links; true: colored links
+	linkcolor=linkcolor,        % color of internal links
+	citecolor=citecolor,        % color of links to bibliography
+	filecolor=black,      		% color of file links
+	urlcolor=linkcolor,
+	bookmarksdepth=4
+}
+\makeatother
+
+%https://creativecommons.org/licenses/by-nc-sa/3.0/br/
+\copyrightnotice{CC BY-NC-SA 3.0 BR {\copyright\the\year} UTFPR}
+\journalname{\small{ET6BD -- MODELAGEM E REGULAÇÃO DIGITAL DE CONVERSORES ESTÁTICOS}}
+\journaldate{\small{\the\year/2}}
+
+
+\author{Primeiro A. Autor e Adriano Ruseler\\
+	\normalsize Universidade Tecnológica Federal do Paraná -- UTFPR, Curitiba -- PR, Brasil\\	
+  \normalsize ORCID: 
+  \href{http://orcid.org/0000-0003-0915-9483}{0000-0003-0915-9483}  e 
+  \href{http://orcid.org/0000-0003-0915-9483}{0000-0003-0915-9483}\\
+  \normalsize e-mail: prime\_iro@alunos.utfpr.edu.br e ruseler@utfpr.edu.br\\
+ }
+
+% Título utilizado para nomear o projeto no Overleaf
+\title{ET6BD-Artigo} 
+
+% Inicia documento 
+\begin{document}
+
+% Escolha o arquivo referente ao conversor
+
+%\include{Buck} % Modelagem e controle do conversor Buck
+%\include{Boost} % Modelagem e controle do conversor Boost
+\include{Buck-Boost} % Modelagem e controle do conversor Buck-Boost
+
+\end{document}
+
+
